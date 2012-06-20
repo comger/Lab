@@ -1,0 +1,6 @@
+安装:
+   python setup.py install or sudo python setup.py install\
+
+demo,运行如下脚本:
+  from sgs.emulator.emu import run
+  run()
