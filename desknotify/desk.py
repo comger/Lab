@@ -29,13 +29,13 @@ class Alert(QMainWindow,Ui_desknotify):
 		n = pynotify.Notification("Hello DL",'More and More<strong><a href="http://blog.xgarden.net">...</a></strong>')
 		n.show()
 	def _set_systray(self):
-		quit = QAction(QString("&Quit"),self);
-		self.connect(quit,SIGNAL("triggered()"),self.close)
-		menu = QMenu(self)
-		menu.addAction(quit);
+		self.quit = QAction(QString("&Quit"),self);
+		self.connect(self.quit,SIGNAL("triggered()"),self.close)
+		self.menu = QMenu(self)
+		self.menu.addAction(self.quit);
 		self.icon = QSystemTrayIcon(loadICON(),self)
 		self.icon.setToolTip(QString(u"A Alert Coming..."))
-		self.icon.setContextMenu(menu)
+		self.icon.setContextMenu(self.menu)
 		self.icon.show()
 
 if __name__=="__main__":
