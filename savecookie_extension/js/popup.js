@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded',function(){
 		var a = document.createElement('a');
 		a.setAttribute('href',data);
 		a.setAttribute('target',"_blank");
-		a.download = CURHOSTNAME+'-cookie.txt';
+		a.download = CURHOSTNAME+'-cookie.dat';
 		var evt = document.createEvent("MouseEvents");
 		evt.initEvent("click", true, true);
 		a.dispatchEvent(evt);
