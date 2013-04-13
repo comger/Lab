@@ -29,6 +29,9 @@ class leveldbIndexer(object):
 		self._conn.Put(key,str(offset))
 	def delete(self,key):
 		self._conn.Delete(key)
+	def rebuild(self,key,ct,offset):
+		#被将会被Storage调用的
+		self._conn.Put(key,str(offset))
 
 class sqliteIndexer(object):
 	"""
@@ -69,6 +72,10 @@ class sqliteIndexer(object):
 		self._conn.commit()
 	def delete(self,key):
 		self._cursor.execute('DELETE FROM KVS WHERE K=?',(key,))
+		self._conn.commit()
+	def rebuild(self,key,ct,offset):
+		#被将会被Storage调用的
+		self._cursor.execute('INSERT OR REPLACE INTO KVS VALUES(?,?)',(key,offset))
 		self._conn.commit()
 
 if __name__=="__main__":

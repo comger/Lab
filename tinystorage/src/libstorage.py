@@ -80,5 +80,5 @@ def test():
 	print "---->",b-a,"sss"
 	print client.read("heihei90000")
 if __name__=="__main__":
-	test()
-
+	client = KVClient.getClient("localhost:5555")
+	print client.read("heihei90000")

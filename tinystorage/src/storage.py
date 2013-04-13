@@ -67,7 +67,7 @@ class textStorage(object):
 			if d > e:
 				del existed[key] #删除这个
 
-		for key,n in existed.itemitems():
+		for key,n in existed.iteritems():
 			cb(key,n[0],n[1])
 	def read(self,key,offset):
 		"""
