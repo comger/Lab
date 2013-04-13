@@ -2,6 +2,6 @@
 
 简单的进行存储元信息与数据内容的分离。
 
-0. 采用Tornado作为网络Deamon。
+0. 采用Tornado作为网络daemon。
 1. 元信息可用sqlite作为存储，也可以用Leveldb保持。
 2. 纯数据采用文本文件的方式进行保存。
